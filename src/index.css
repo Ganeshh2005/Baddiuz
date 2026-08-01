@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-cursive {
+    font-family: 'Dancing Script', cursive;
+  }
+  .font-sacramento {
+    font-family: 'Sacramento', cursive;
+  }
+  .font-greatvibes {
+    font-family: 'Great Vibes', cursive;
+  }
+  .font-serif-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(4deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(244, 114, 182, 0.4), 0 0 40px rgba(251, 113, 133, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(244, 114, 182, 0.7), 0 0 60px rgba(251, 113, 133, 0.4);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.18);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-heart-beat {
+  animation: heartBeat 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF5F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #FDA4AF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F43F5E;
+}
+
+/* Glassmorphic Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 228, 230, 0.7);
+}
+
+.glass-card-dark {
+  background: rgba(255, 241, 242, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+/* Polaroid Card Effect */
+.polaroid {
+  background: white;
+  padding: 12px 12px 28px 12px;
+  box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.polaroid:hover {
+  transform: translateY(-8px) rotate(1deg) scale(1.02);
+  box-shadow: 0 20px 35px -5px rgba(244, 63, 94, 0.25), 0 10px 15px -5px rgba(0, 0, 0, 0.08);
+}
